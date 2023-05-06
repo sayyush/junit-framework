@@ -9,7 +9,7 @@ public class Day03_02Assertions {
     /*
     What is assertion?
     Assertion is done to make sure expected status and actual status are equal
-    Without assertion there will be no automation test. Assertions are mandatory in testing
+    Without assertion there will be NO automation test. Assertions are mandatory in testing
     Assertion is done  to improve the quality of the application and to create bug-free applications
     expected = actual ==> PASS
     expected != actual ==> FAIL
@@ -39,7 +39,7 @@ public class Day03_02Assertions {
         assertEquals(2, 2);
         assertEquals("Expected and Actual data did not match", 2, 2);
         assertTrue("John".endsWith("n"));
-        assertFalse("John".contains("X"));//Mostly used for negative tests
+        assertFalse("John".contains("X"));// pass   //Mostly used for negative tests
 
     }
 }

@@ -38,7 +38,15 @@ Selenium is a library.
 
 * Maven is not a library, it is a project build tool, especially Java.
 
-dependencies'lari sirket tarafindan aliyoruz.
+Where do you get your dependencies in your company?
+from MAVEN repository  <<= it is wrong answer
+from my company <<= it is true answer
+
+Locators - yer bulucu, konum belirleyici
+teardown - destroy breaking smth, seperate each other.
+quit - iptal etmek / cikis/ cik
+
+* Anything on the webpage is called "WEBELEMENT", ex: button, search box, text box, headers, tables.
 
 
 

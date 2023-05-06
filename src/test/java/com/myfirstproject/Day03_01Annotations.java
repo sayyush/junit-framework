@@ -5,12 +5,13 @@ import org.junit.*;
 public class Day03_01Annotations {
 
         /*
-        There are 6 JUnit annotations
+           There are 6 JUnit annotations
         1. @Test ==> Used to create test case
-        Test methods must have @Test annotation. They must be public and void because they are created to do assertions.
+           Test methods must have @Test annotation. They must be public and void because they are created to do assertions.
         2. @Before and @After ==> Used to run before and after EACH @Test method
         3. @BeforeClass and @AfterClass ==> Used to run before and after EACH Class only ONCE. These methods must be static
-        4. @Ignore ==> Used to SKIP a test case
+        4. @Ignore ==> Used to SKIP a test case  (ex: mesela test case 4 u ==> you are working on a project and
+           you haven't finished this yet or there is something wrong here then you will ignore that part in group run and  you can run others)
          */
 
     @Before
@@ -50,7 +51,7 @@ public class Day03_01Annotations {
         System.out.println("This is test case 3");
     }
 
-    @Test @Ignore//This method will be ignored in group run!
+     @Test @Ignore//This method will be ignored in group run!
     public void test04(){
         System.out.println("This is test case 4");
     }

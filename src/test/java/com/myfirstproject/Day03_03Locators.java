@@ -1,16 +1,21 @@
 package com.myfirstproject;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+// The most common selenium LOCATORS ara "id" , "xpath" .
 
 public class Day03_03Locators {
     /*
@@ -19,6 +24,9 @@ public class Day03_03Locators {
     And enter password
     And click on submit button
     Then verify the login is successful
+    When Click on "updated collings" options
+    And Click on logout option
+    Then verify the logout is successful
     */
 
     WebDriver driver;
@@ -52,14 +60,31 @@ public class Day03_03Locators {
 
 //        Then verify the login is successful
         String url = driver.getCurrentUrl();
-        assertEquals("Url did not match","https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",url);
+        assertEquals("Url did not match","https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",url);//OR
+        assertTrue(driver.getCurrentUrl().contains("dashboard"));
         Thread.sleep(3000);
 
+//        When Click on "user dropdown" options
+        driver.findElement(By.className("oxd-userdropdown-tab")).click();
+        Thread.sleep(3000);
+
+//        And Click on logout option
+        driver.findElement(By.partialLinkText("Logou")).click();
+
+//        Then verify the logout is successful            ==>     //tagName[@attribute=‘value’];
+        assertTrue(driver.findElement(By.xpath("//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']")).isDisplayed());//OR
+
+        String loginText = driver.findElement(By.tagName("h5")).getText();
+        assertEquals("Login",loginText);
+
     }
 
+
     @After
-    public void tearDown(){
-        driver.close();
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
     }
+
 
 }
