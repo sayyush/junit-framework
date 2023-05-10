@@ -5,8 +5,24 @@ import org.junit.Test;
 
 public class Day05_01JavaFaker {
     /*
+
+      fake data = mock data : data that is not real
+      fake ssn, fake name, fake address
+      we can use fake data to test
+      we can use fake data test
+      we can use java faker class to generate (uretmek olusturmak) fake data.
+      ILK once dependency ekliyoruz.
+
+
+      *** You can use "Java faker" in your company also   ***
+
+      Imagine you are working in bank. Can you do any change on back accounts . You can not use real addresses, names...
+      No one let you use REAL data.
+
+
     Test Data: Username, password, name, lastname, address, zipcode, ssn, title etc...
     Where do we get these test data?
+    From :
     BA - Business Analyst ==> Because he/she writes requirements like acceptance criteria
     Test Lead
     Manual Tester
@@ -16,19 +32,21 @@ public class Day05_01JavaFaker {
     From Database
     From API requests
     AND ==>  Java Faker as mock data
+
      */
 
     @Test
     public void javaFaker() {
+
         //1st Step: Create Faker object
         Faker faker = new Faker();
 
-        //2nd Step: By using faker object generate fake data
-        String firstName = faker.name().firstName();
+        //2nd Step: By using faker object generate fake data   1.way
+        String firstName = faker.name().firstName();    // method chain  // her defasinda degisik fake isim veriyor.
         System.out.println("firstName = " + firstName);
 
-        //It is also possible to use instance() static method without creating object:
-        String firstName2 = Faker.instance().name().firstName();
+        //It is also possible to use instance() static method without creating object:    2.way
+        String firstName2 = Faker.instance().name().firstName();                      // Buda kolay yolu
         System.out.println("firstName2 = " + firstName2);
 
         //fullName

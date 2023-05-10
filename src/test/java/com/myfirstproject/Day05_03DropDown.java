@@ -10,7 +10,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class Day05_03DropDown extends TestBase {
+public class Day05_03DropDown extends TestBase{
+
         /*
         Go to https://testcenter.techproeducation.com/index.php?page=dropdown
         1.Create a test method selectByIndexTest and Select Option 1 using index
@@ -135,6 +136,6 @@ public class Day05_03DropDown extends TestBase {
         int sizeOfOptions = optionsList.size();
         System.out.println("sizeOfOptions = " + sizeOfOptions);
 
-    }
 
+    }
 }

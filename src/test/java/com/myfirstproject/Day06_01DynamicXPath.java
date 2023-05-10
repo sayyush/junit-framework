@@ -25,5 +25,8 @@ public class Day06_01DynamicXPath extends TestBase {
 //        //tag[@att1='value' and @attr1 = 'value']
         driver.findElement(By.xpath("//input[@type='password' and @placeholder='Password']")).sendKeys("admin123");
         driver.findElement(By.xpath("//button[contains(@type,'submit')]")).click();
+
+
+
     }
 }

@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 public class Day05_02CheckBox {
     /*
      Go to https://testcenter.techproeducation.com/index.php?page=checkboxes
-     Click on checkbox1 if box is not selected
+     Click on checkbox1 if box is not selected     (if condition)
      Click on checkbox2 if box is not selected
      */
     WebDriver driver;
@@ -37,16 +37,18 @@ public class Day05_02CheckBox {
 
     @Test
     public void checkBoxTest() throws InterruptedException {
-//        Go to https://testcenter.techproeducation.com/index.php?page=checkboxes
+ //        Go to https://testcenter.techproeducation.com/index.php?page=checkboxes
         driver.get("https://testcenter.techproeducation.com/index.php?page=checkboxes");
+
 
 //        Click on checkbox1 if box is not selected
         //Locate the checkbox1
         WebElement box1 = driver.findElement(By.xpath("//input[@id='box1']"));
 
-        if(!box1.isSelected()){// !box1.isSelected() ==> gives true. ! coverts value to contrary
+
+        if(!box1.isSelected()){// !box1.isSelected() ==> gives true. ! coverts value to contrary (aksini, tersini)
             Thread.sleep(3000);
-            box1.click();
+            box1.click();                       // Mantigi tam oturmadi
         }
         assertTrue(box1.isSelected());
 
@@ -59,3 +61,4 @@ public class Day05_02CheckBox {
 
     }
 }
+
