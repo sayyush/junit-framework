@@ -26,6 +26,7 @@ public class Day07_01WindowHandle extends TestBase {
         driver.get("https://the-internet.herokuapp.com/windows");
 
 //        Then user verifies the text : “Opening a new window”
+//                           driver.findElement(By.tagName("h3"))   ;
         String page1Header = driver.findElement(By.xpath("//h3")).getText();
         assertEquals("Opening a new window", page1Header);
 
@@ -43,11 +44,13 @@ public class Day07_01WindowHandle extends TestBase {
         System.out.println("allWindowHandles = " + allWindowHandles);
 
         for (String w : allWindowHandles) {
+            // eger listedeki id window1 e esit degilse, otomatik olarak window 2 ye esittir.
             if (!w.equals(window1Handle)) {
                 driver.switchTo().window(w);//This will switch driver to window 2
                 break;
             }
         }
+
 
 //        Then user verifies the text: “New Window”
         assertEquals("New Window", driver.getTitle());
@@ -74,6 +77,7 @@ public class Day07_01WindowHandle extends TestBase {
         //Switch back to Window 1
         Thread.sleep(2000);
         driver.switchTo().window(window1Handle);
+
 
     }
 }

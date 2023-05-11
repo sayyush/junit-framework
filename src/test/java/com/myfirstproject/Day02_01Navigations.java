@@ -34,6 +34,12 @@ public class Day02_01Navigations {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe"); // bunu her defasinda yapmiycaz
  //        2. Create the driver object
         WebDriver driver = new ChromeDriver();
+        // WebDriverdan obje olusturuyoruz ama chromeDriver kullaniyoruz cunku:
+        // Webdriver bir interface'dir ondan Object olusturamiyoruz.
+        // chromeDriver bir class'dir o yuzden onu kullaniyoruz.
+
+
+
 //       3. Now that we have our driver instance, we can START CREATING OUT TEST SCRIPT
 //        Maximize the window
         driver.manage().window().maximize(); //we always maximize our window

@@ -1,0 +1,17 @@
+Interview questions
+
+1. How do you find the number of iframe on apage? Bir sayfadaki toplam iframe sayisini nasil buluruz?
+   Iframe'ler iframe tag'i kullanilarak olusturulur.Bu durumda find elements by frame locator'ini kullanarak tum iframeleri bulurum.
+   driver.findElements(By.tagName("iframe"));
+   driver.findElements(By.xpath("//iframe));
+
+2. Explain how you can switch back from a main page? Tekrar ana sayfaya nasil donersin?
+   2 farkli yol vardir.
+   defaultContent yada parentFrame metotlarini kullanarak gecis yapabiliriz.
+
+3. What is the difference between defaultContent and parentFrame ? Ikisinin arasindaki fark nedir?
+   Oncelikle her ikiside frame'in disina cikmamizi saglar. Ama defaultContent direk ana sayfaya atlatir, parentFrame ise bir ust
+   seviyeye atlatir.
+
+4. What might be the reason for your test case to fail?
+   1. Yanlis locator. Cozum : Tekrar elementi locate etmek
