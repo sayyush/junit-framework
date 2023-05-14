@@ -15,3 +15,12 @@ Interview questions
 
 4. What might be the reason for your test case to fail?
    1. Yanlis locator. Cozum : Tekrar elementi locate etmek
+   ....
+   ....
+   .... devami var
+
+
+5. Tester olarak ekran goruntusu neden alinir?
+   Dokumantasyon icin :
+                       Gecen test caselerin gectigini kayda gecirmek icin
+                       Kalan test caselerin de kaldigini/bug bulundugunu kayda gecirmek icin

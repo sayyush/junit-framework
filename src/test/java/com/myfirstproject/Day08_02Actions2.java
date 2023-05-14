@@ -18,6 +18,16 @@ public class Day08_02Actions2 extends TestBase {
     Then verify the page title contains "Your Account"
      */
 
+    /*
+    MANUAL:
+    Amazon home sayfasina git,
+    Account & List e uzerinde bekle  (mouse over - hover over)
+    Acilan pencerede Account linkine tikla
+    Acilan sayfanin title inin "Your Account" oldugunu dogrula
+     */
+
+
+
     @Test
     public void hoverOverTest() {
         //Given user is on the https://www.amazon.com/

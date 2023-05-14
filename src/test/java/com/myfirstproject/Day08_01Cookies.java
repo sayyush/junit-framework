@@ -7,6 +7,7 @@ import org.openqa.selenium.Cookie;
 
 import java.util.Set;
 
+
 public class Day08_01Cookies extends TestBase {
     /*
     1. Find the total number of cookies
@@ -16,21 +17,24 @@ public class Day08_01Cookies extends TestBase {
     5. Delete cookie by name
     6. Delete all the cookies
      */
-
     @Test
-    public void cookiesTest() {
+    public void cookiesTest() throws InterruptedException {
 
-        driver.get("https://amazon.com");
+        // Alttaki islemler sadece 1 testcase icin gecerli, kalici islem degil.
+        driver.get("https://www.walmart.com/");
+
+     //   driver.get("https://amazon.com");
 
 //        1. Find the total number of cookies
-        Set<Cookie> allCookies = driver.manage().getCookies();//getCookies() method Returns ==> Set<Cookie>
+        Set<Cookie> allCookies = driver.manage().getCookies();//getCookies() method Returns ==> Set<Cookie> toplam cerez sayisi
         int totalNumberOfCookies = allCookies.size();
         System.out.println("totalNumberOfCookies = " + totalNumberOfCookies);
 
 //        2. Print all the cookies
         //System.out.println(allCookies); This is not the recommended way
+
         for (Cookie w : allCookies) {
-            System.out.println("Cookie: " + w);
+            System.out.println("Cookie: " + w);  // cookie'nin tum bilgilerini yazdirir (id, expire domain ...)
             System.out.println("Cookie Name: " + w.getName());
             System.out.println("Cookie Value: " + w.getValue());
             System.out.println("Cookie Expiry: " + w.getExpiry());
@@ -45,10 +49,10 @@ public class Day08_01Cookies extends TestBase {
         System.out.println("The cookie called by name = " + cookie);
 
 //        4. Add new cookie
-        Cookie myCookie = new Cookie("my-cookie", "delicious-cookie");
-        driver.manage().addCookie(myCookie);
+        Cookie myCookie = new Cookie("my-cookie", "antep-fistikli-cookie"); // cookie olustur
+        driver.manage().addCookie(myCookie); // sayfaya yeni cookie ekle
         System.out.println("Newly added cookie: " + driver.manage().getCookieNamed("my-cookie"));
-        System.out.println("Total Number of Cookies after adding new cookie: " + driver.manage().getCookies().size());
+        System.out.println("Total Number of Cookies after adding new cookie: " + driver.manage().getCookies().size()); // cookie sayisi artti
 
 //        5. Delete cookie by name
         driver.manage().deleteCookieNamed("sp-cdn");

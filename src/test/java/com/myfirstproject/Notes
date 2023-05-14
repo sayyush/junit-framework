@@ -118,3 +118,167 @@ This is the most commonly used syntax :
 
 Note :
  tag can be replaced with * if you want to ignore tag (* refers to ANY tag     . refers to any attribute)
+
+
+                                     Cookies - cerezler
+Browserda gecici olusan bilgi dosyalaridir.
+Cookies bilgisayarimizda gecici olarak depolanir.
+Cookies, kisisel bilgiler de dahil olmak uzere bircok bilgiyi icerebilir.
+Web siteleri, ancak sizin izin verdiginiz bilgilere erisebilir.
+Bu web sayfalari, sizin vermediginiz bilgilere erisemez ya da bilgisayarinizdaki diger dosyalari goruntuleyemez.
+
+What is cookie?
+The the temporary data that is created by the browser
+Cookies are stored in our computers as we visit the websites
+
+We can automate handling cookies:
+Find the cookies
+Add new cookie
+Delete cookies
+
+driver.manage().
+                addCookie()
+                getCookies() - tum cookieleri getirir
+                deleteAllCookies()
+                deleteCookie() - tek cookie sileriz.
+                getCookieNamed()
+                deleteCookieNamed()
+
+
+
+
+/*
+
+flower dosyasinin path(yolunu) almak icin 1.   shift + resmin ustune sag click ordan "copy as path"
+                                          2.  bilgisayarda terminal aciyoruz resmi surukle yapistir oylede path veriyor
+ */
+
+
+
+
+
+
+/*
+   To make the path dynamic we need to create home directory:
+        String userHome = System.getProperty("user.home");
+        System.out.println(userHome);   // C:\Users\ROG
+
+   To make the path current project folder
+        String userHome1 = System.getProperty("user.dir");
+        System.out.println(userHome1);  // C:\Users\ROG\IdeaProjects\myseleniumproject
+
+*/
+
+
+
+
+
+
+
+
+
+/*
+
+
+package com.utilities;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.Date;
+
+/*
+TestBase'i  abstract yapmamizin sebebi bu sinifin objesini olusturmak istemiyorum
+TestBase testBase = new TestBase();  -> YAPILAMAZ
+Amacim bu sinifi extend etmek ve icindeki hazir metodlari kullanmak
+
+driver objesini olustur. Driver ya public yada protected olmali.
+Sebebi child class'larda gorulebilir olmasi.
+ */
+
+public abstract class TestBase {
+
+    protected static  WebDriver driver;
+
+    @Before
+    public void setUp() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    @After
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
+  public void takeScreenshotOfTheEntirePage() throws IOException {
+
+     //  1. TakeScreenShot class with getScreenShotAs method to capture the screenshot
+
+     File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);   // selenium section
+
+
+     // System.getProperty("user.dir") ==> current project folder which means yukardaki "myseleniumproject " level.
+     // We want to save our screenshots not in the desktop, not in the downloads, nowhere else. We want to save our image on this current project.
+
+      // 2. Create a Path to save the image
+      // Create a data for giving dynamic name otherwise the screenshots overrides
+
+     String now = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date()); // getting local date in this format
+                   // CURRENT PROJECT FOLDER        foldername    subfoldername  imagename
+     String path = System.getProperty("user.dir")+ "/test-output/Screenshots/" +now+ " image.png" ;
+
+   //  /test-output/Screenshots/"  ==> bunu boyle yazarsak kendisi otamatik aciyor sol tarafta
+
+     // 3. Save the image in the path using JAVA as a file
+      FileUtils.copyFile(image,new File(path));
+
+  }
+
+
+}
+
+// selenium tr  12. actions hakkinda reusable methodlar var orda. 50:21 dk
+
+
+
+ // There are some screenshots you CAN, some screenshots you HAVE TO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
