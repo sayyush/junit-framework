@@ -39,7 +39,7 @@ public class Day03_02Assertions {
         assertEquals(2, 2);
         assertEquals("Expected and Actual data did not match", 2, 2);
         assertTrue("John".endsWith("n"));
-        assertFalse("John".contains("X"));// pass   //Mostly used for negative tests
+       assertFalse("John".contains("X"));// pass   //Mostly used for negative tests
 
     }
 }

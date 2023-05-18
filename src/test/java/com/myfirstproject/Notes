@@ -86,6 +86,17 @@ implicit(tam) wait. wait UP to 30 second  recommended
                 3. @BeforeClass and @AfterClass ==> Used to run before and after EACH Class only ONCE. These methods must be static
                 4. @Ignore ==> Used to SKIP a test case  (ex: mesela test case 4 u ==> you are working on a project and
                    you haven't finished this yet or there is something wrong here then you will ignore that part in group run and  you can run others)
+
+
+                                @Before and @After
+          @Before is used for repeated pre conditions, @After used for repeated after conditions
+          @Before is used to setup the driver, or open the browser, put waits, or go to URL
+          @After is used to close browser, or generate reports.
+          We separate Test Cases and Pre/After conditions using @Before and @After method
+          @Before runs before each @Test method, @After runs after each @Test method
+
+
+
                 */
 
 
@@ -259,15 +270,14 @@ public abstract class TestBase {
 
 
 
+// test execution - testleri calistirma
 
-
-
-
-
-
-
-
-
+/*
+                      SCREENSHOTS
+Neden ekran goruntusu alinir?
+- Dokumantasyon icin
+- Gecen test caselerin gectigini kayda gecirmek icin
+- Kalan test caselerin de kaldigini/ bug bulundugunu kayda gecirmek icin
 
 
 

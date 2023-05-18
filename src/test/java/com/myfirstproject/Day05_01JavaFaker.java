@@ -7,7 +7,7 @@ public class Day05_01JavaFaker {
     /*
 
       fake data = mock data : data that is not real
-      fake ssn, fake name, fake address
+      fake ssn(Social Security number), fake name, fake address
       we can use fake data to test
       we can use fake data test
       we can use java faker class to generate (uretmek olusturmak) fake data.

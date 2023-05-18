@@ -59,14 +59,15 @@ public class Day03_03Locators {
         loginButton.click();
 
 //        Then verify the login is successful
-        String url = driver.getCurrentUrl();
+        String url = driver.getCurrentUrl();                 // login yaptiktan sonraki url'i aldik   wapsheta eto zawiset ot tebya
         assertEquals("Url did not match","https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",url);//OR
         assertTrue(driver.getCurrentUrl().contains("dashboard"));
         Thread.sleep(3000);
 
+
 //        When Click on "user dropdown" options
         driver.findElement(By.className("oxd-userdropdown-tab")).click();
-        Thread.sleep(3000);
+        Thread.sleep(3000); // This is hard wait(Java wait).This waits in any condition. This will keep execution for 3 seconds.
 
 //        And Click on logout option
         driver.findElement(By.partialLinkText("Logou")).click();

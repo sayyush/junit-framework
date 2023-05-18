@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class Day02_05VerifyURLTest {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -20,6 +20,7 @@ public class Day02_05VerifyURLTest {
 
         driver.get("https://techproeducation.com/");
        String actualCurrentURL = driver.getCurrentUrl(); // returns the EXISTING URL
+
 
        if(actualCurrentURL.equals("https://techproeducation.com/")){
            System.out.println("PASS");
