@@ -19,7 +19,7 @@ public class Day02_02WebDriverManager {
 //         System.setProperty("webdriver.ende.driver", "src/main/resources/drivers/edgedriver.exe"); // edge setup
 //        WebDriver edge = new EdgeDriver();
 
-//         WITH  WEBDRIVER MANAGER(Setting up and executing the best cases)    (Dependency ekledik bunu kullanmak icin)
+//         WITH  WEBDRIVER MANAGER(Setting up and executing the test cases)    (Dependency ekledik bunu kullanmak icin)
         WebDriverManager.chromedriver().setup(); // chrome setup    Alternative way and short
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

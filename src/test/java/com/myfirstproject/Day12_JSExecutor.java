@@ -17,14 +17,14 @@ import static org.junit.Assert.assertTrue;
 public class Day12_JSExecutor extends TestBase {
 
     /*
-     Go to https://www.amazon.com
-     Scroll into footer
-     Assert if that footer exists on the page
-     Take a screenshot of the page
-     Scroll into search box
-     Verify the search box is displayed
-     Take a screenshot of the page
-      */
+    Go to https://www.amazon.com
+    Scroll into footer
+    Assert if that footer exists on the page
+    Take a screenshot of the page
+    Scroll into search box
+    Verify the search box is displayed
+    Take a screenshot of the page
+     */
     @Test
     public void scrollIntoViewTest() throws InterruptedException {
 //        Go to https://www.amazon.com
@@ -119,8 +119,8 @@ public class Day12_JSExecutor extends TestBase {
         driver.get("https://www.amazon.com");
 
 //        Type porcelain tea set in search box
-        WebElement searchBox = locateElementByJS("twotabsearchtextbox");
-        searchBox.sendKeys("porcelain tea set");
+     //   WebElement searchBox = locateElementByJS("twotabsearchtextbox");
+      //  searchBox.sendKeys("porcelain tea set");
 
 //        Click on search button
         WebElement searchButton = driver.findElement(By.id("nav-search-submit-button"));
@@ -141,9 +141,9 @@ public class Day12_JSExecutor extends TestBase {
         driver.get("https://www.amazon.com");
 
 //        Type porcelain tea set in search box
-        WebElement searchBox = locateElementByJS("twotabsearchtextbox");
+      //  WebElement searchBox = locateElementByJS("twotabsearchtextbox");
         //searchBox.sendKeys(); --> This is regular typing method in selenium. We will create a method that will type by using JavaScriptExecutor
-        setValueByJS(searchBox,"porcelain tea set");
+    //    setValueByJS(searchBox,"porcelain tea set");
 
 //        Click on search button
         WebElement searchButton = driver.findElement(By.id("nav-search-submit-button"));
@@ -156,7 +156,6 @@ public class Day12_JSExecutor extends TestBase {
         Fill the form
         Click on submit
          */
-
     @Test
     public void studentFormTest(){
 //        Go to http://www.uitestpractice.com/Students/Form
@@ -183,23 +182,3 @@ public class Day12_JSExecutor extends TestBase {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

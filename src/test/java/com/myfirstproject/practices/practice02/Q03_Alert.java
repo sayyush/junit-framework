@@ -34,6 +34,7 @@ When
 
         //  Verify that message is "I am an alert box!"
         assertEquals("I am an alert box!", alertText);
+        
 
         //  Accept Alert
 
